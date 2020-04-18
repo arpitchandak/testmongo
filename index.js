@@ -15,7 +15,9 @@ app.use(authroutes)
 
 mongoose.connect(mongourl,{
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify : true,
+    useCreateIndex : true
 })
 
 mongoose.connection.on('connected', () =>{
