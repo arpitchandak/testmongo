@@ -33,6 +33,7 @@ app.post('/',(request,response) =>{
     console.log(request.body)
     response.send("Hello");
 })
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.listen,(PORT, () => {
     console.log("Server Running on :", PORT)

@@ -3,7 +3,7 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const User = mongoose.model('User')
 
-router.post('/',async (request,response) =>{
+router.post('/data',async (request,response) =>{
 
 
 
