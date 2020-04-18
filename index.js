@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const app = express()
-//const PORT = 80
+const PORT = process.env.PORT || 80
 
 const {mongourl} = require('./keys')
 require('./modules/User');
@@ -32,7 +32,7 @@ app.post('/',(request,response) =>{
     response.send("Hello");
 })
 
-app.listen(process.env.PORT || 80, () => {
+app.listen,(PORT, () => {
     console.log("Server Running on :", PORT)
 })
 
