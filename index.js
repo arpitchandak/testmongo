@@ -5,9 +5,9 @@ const app = express()
 const PORT = process.env.PORT || 80
 
 const {mongourl} = require('./keys')
-require('./modules/User');
+require('./User');
 
-const authroutes = require('./routes/authroutes');
+const authroutes = require('./authroutes');
 app.use(bodyParser.json())
 app.use(authroutes)
 
