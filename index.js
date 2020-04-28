@@ -1,17 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const favicon = require('express-favicon');
-
 const app = express()
-const PORT = process.env.PORT || 80
+const PORT = 3000
 
 const {mongourl} = require('./keys')
-require('./User');
+require('./modules/User');
 
-app.use(favicon(__dirname + '/favicon.ico'));
-
-const authroutes = require('./authroutes');
+const authroutes = require('./routes/authroutes');
 app.use(bodyParser.json())
 app.use(authroutes)
 
@@ -37,9 +33,8 @@ app.post('/',(request,response) =>{
     console.log(request.body)
     response.send("Hello");
 })
-app.get('/favicon.ico', (req, res) => res.status(204));
 
-app.listen,(PORT, () => {
+app.listen(process.env.PORT || 80, () => {
     console.log("Server Running on :", PORT)
 })
 
